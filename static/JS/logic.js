@@ -15,10 +15,10 @@ d3.json(url).then(function(data){
   console.log(data)
 
   // Create a new marker cluster group
-  var pinotNoirMarkers = L.markerClusterGroup();
-  var chardonnayMarkers = L.markerClusterGroup();
-  var redBlendMarkers = L.markerClusterGroup();
-  var cabernetSauvignonMarkers = L.markerClusterGroup();
+  var burgersMarkers = L.markerClusterGroup();
+  // var chardonnayMarkers = L.markerClusterGroup();
+  // var redBlendMarkers = L.markerClusterGroup();
+  // var cabernetSauvignonMarkers = L.markerClusterGroup();
   var all_elseMarkers = L.markerClusterGroup();
 
 
@@ -32,26 +32,28 @@ d3.json(url).then(function(data){
 
 for (var i = 0; i < data.data.length; i++) {
 	var location = data.data[i];
-  if (location.variety === "Pinot Noir"){
-  	pinotNoirMarkers.addLayer(
-    L.marker([location.lats, location.lngs]).bindPopup("<h5>Variety: " + location.variety + "</h5><hr><h5>Region: " + location.region + "</h5><hr><h5>Winery: " + location.winery + "</h5>"))
-  } else if (location.variety === "Chardonnay"){
-  	chardonnayMarkers.addLayer(
-      L.marker([location.lats, location.lngs]).bindPopup("<h5>Variety: " + location.variety + "</h5><hr><h5>Region: " + location.region + "</h5><hr><h5>Winery: " + location.winery + "</h5>"))
-    }  else if (location.variety === "Red Blend"){
-  	redBlendMarkers.addLayer(
-      L.marker([location.lats, location.lngs]).bindPopup("<h5>Variety: " + location.variety + "</h5><hr><h5>Region: " + location.region + "</h5><hr><h5>Winery: " + location.winery + "</h5>"))
-    }  else if (location.variety === "Cabernet Sauvignon"){
-  	cabernetSauvignonMarkers.addLayer(
-      L.marker([location.lats, location.lngs]).bindPopup("<h5>Variety: " + location.variety + "</h5><hr><h5>Region: " + location.region + "</h5><hr><h5>Winery: " + location.winery + "</h5>"))
-    } else
+  if (location.Category === "Burger Joint"){
+  	burgersMarkers.addLayer(
+    L.marker([location.lats, location.lngs]).bindPopup("<h5>Category: " + location.Category + "</h5><hr><h5>Neighborhood: " + location.Neighborhood + "</h5><hr><h5>Venue: " + location.Venue + "</h5><h5>Rating: " + location.Rating + "</h5>"))
+  } 
+    //   else if (location.variety === "Chardonnay"){
+  	// chardonnayMarkers.addLayer(
+    //   L.marker([location.lats, location.lngs]).bindPopup("<h5>Variety: " + location.variety + "</h5><hr><h5>Region: " + location.region + "</h5><hr><h5>Winery: " + location.winery + "</h5>"))
+    // }  else if (location.variety === "Red Blend"){
+  	// redBlendMarkers.addLayer(
+    //   L.marker([location.lats, location.lngs]).bindPopup("<h5>Variety: " + location.variety + "</h5><hr><h5>Region: " + location.region + "</h5><hr><h5>Winery: " + location.winery + "</h5>"))
+    // }  else if (location.variety === "Cabernet Sauvignon"){
+  	// cabernetSauvignonMarkers.addLayer(
+    //   L.marker([location.lats, location.lngs]).bindPopup("<h5>Variety: " + location.variety + "</h5><hr><h5>Region: " + location.region + "</h5><hr><h5>Winery: " + location.winery + "</h5>"))
+    // } 
+        else
   	{
   	all_elseMarkers.addLayer(
-      L.marker([location.lats, location.lngs]).bindPopup("<h5>Variety: " + location.variety + "</h5><hr><h5>Region: " + location.region + "</h5><hr><h5>Winery: " + location.winery + "</h5>"))
+      L.marker([location.lats, location.lngs]).bindPopup("<h5>Category: " + location.Category + "</h5><hr><h5>Neighborhood: " + location.Neighborhood + "</h5><hr><h5>Venue: " + location.Venue + "</h5><h5>Rating: " + location.Rating + "</h5>"))
     }  
 }
 // myMap.addLayer(markers)
-console.log(pinotNoirMarkers)
+// console.log(pinotNoirMarkers)
 
 // myMap.addLayer(markers)
 // 
@@ -111,20 +113,20 @@ var baseMaps = {
 
 // Overlays that may be toggled on or off
 var overlayMaps = {
-  "Pinot Noir": pinotNoirMarkers
+  "Burger Joints": burgersMarkers,
   // "Chardonnay": chardonnayMarkers,
   // "Red Blend": redBlendMarkers,
   // "cabernet Sauvignon": cabernetSauvignonMarkers,
-  // "Others": all_elseMarkers
+  "Others": all_elseMarkers
 };
 
 // We set the longitude, latitude, and the starting zoom level=========================end
 // This gets inserted into the div with an id of 'map'
 var myMap = L.map("map", {
 center: [40.7128, -74.0060],
-  zoom: 13,  // 0 to 24
-  maxZoom: 10,
-  layers: [streetsmap, pinotNoirMarkers]  // , chardonnay, redBlend, cabernetSauvignon, bordeaux]
+  zoom: 8,  // 0 to 24
+  maxZoom: 18,
+  layers: [streetsmap, burgersMarkers]  // , chardonnay, redBlend, cabernetSauvignon, bordeaux]
 });
 
 
