@@ -88,14 +88,35 @@ function generateOverlay(selectedData) {
     return layerGroup;
 };
 
-var markerLayer = L.layerGroup([]);
+var burgerMarkers = L.markerClusterGroup([]);
+var otherMarkers = L.markerClusterGroup([]);
 d3.csv("data/merged_data.csv", function(csv) {
     csv.forEach(function(row) {
-        var marker = L.marker([row['Venue Latitude'], row['Venue Longitude']]).addTo(markerLayer);
-        marker.bindPopup(`${row['Venue']}: 
-        <br>Rating - ${row['Rating']}
-        <br>${row['Like Count']} Likes 
-        <br>${row['Tip Count']} Reviews`)
+        if (row['Venue Category'] === "Burger Joint") {
+            burgerMarkers.addLayer(
+                L.marker([row['Venue Latitude'], row['Venue Longitude']]).bindPopup(
+                    "<h5>Category: " + row['Venue Category'] + 
+                    "</h5><hr><h5>Neighborhood: " + row.Neighborhood + 
+                    "</h5><hr><h5>Venue: " + row.Venue + 
+                    "</h5><h5>Rating: " + row.Rating + "</h5>"
+                )
+            )
+        }
+        else {
+            otherMarkers.addLayer(
+                L.marker([row['Venue Latitude'], row['Venue Longitude']]).bindPopup(
+                    "<h5>Category: " + row['Venue Category'] + 
+                    "</h5><hr><h5>Neighborhood: " + row.Neighborhood + 
+                    "</h5><hr><h5>Venue: " + row.Venue + 
+                    "</h5><h5>Rating: " + row.Rating + "</h5>"
+                ) 
+            )  
+        };
+        // var marker = L.marker([row['Venue Latitude'], row['Venue Longitude']]).addTo(markerLayer);
+        // marker.bindPopup(`${row['Venue']}: 
+        // <br>Rating - ${row['Rating']}
+        // <br>${row['Like Count']} Likes 
+        // <br>${row['Tip Count']} Reviews`)
     });
 });
 
@@ -107,7 +128,8 @@ var baseMaps = {
 };
 
 var overlayMaps = {
-    "Venues": markerLayer
+    "Burger Joints": burgerMarkers,
+    "Other Venues": otherMarkers
 };
 
 var map = L.map("map", {
