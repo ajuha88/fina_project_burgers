@@ -1,0 +1,284 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#map,
+body,
+html {
+    height: 1000px;
+    width: 100%;
+}
+
+.title-text {
+    position:relative;
+    top:-170%;
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.subtitle {
+    top:-180%
+}
+
+.link-container-bun1 {
+    position:relative;
+    top: 2%;
+    left: 10%;
+    width: 80%;
+    height: 20%;
+    background-color: #ffc266;
+    border-radius: 40px;
+    border-top-left-radius: 240px;
+    border-top-right-radius: 240px;
+    overflow: hidden;
+}
+
+.link-container-patty1 {
+    position:relative;
+    top: 2%;
+    left: 10%;
+    width: 80%;
+    height: 27%;
+    background-color:#804000;
+    border-radius: 80px;
+    overflow: hidden;
+}
+
+.link-container-patty2 {
+    position:relative;
+    top: 2%;
+    left: 10%;
+    width: 80%;
+    height: 27%;
+    background-color:#804000;
+    border-radius: 80px;
+    overflow: hidden;   
+}
+
+.link-container-patty3 {
+    position:relative;
+    top: 2%;
+    left: 10%;
+    width: 80%;
+    height: 54%;
+    background-color:#804000;
+    border-radius: 80px;
+    overflow: hidden;   
+}
+
+.link-container-bun2 {
+    position:relative;
+    top: 2%;
+    left: 10%;
+    width: 80%;
+    height: 20%;
+    background-color: #ffc266;
+    border-radius: 40px;
+    border-bottom-left-radius: 240px;
+    border-bottom-right-radius: 240px;
+    overflow: hidden;
+}
+
+
+.link-box {
+    position: relative;
+    top: 5%;
+    left: 3%;
+    height: 90%;
+    width: 42%;
+}
+
+.iframes {
+    position:relative;
+    width: 100%;
+    height: 100%;
+    border:none;
+}
+
+.box-a {
+    border-radius: 40px;
+}
+
+.box-b {
+    border-radius: 40px;
+}
+
+
+.bun1-shading {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    left: 60%;
+    background-color: #ffad33;
+}
+
+.bun1-unshading {
+    position: relative;
+    top: -100%;
+    height: 100%;
+    width: 40%;
+    left: 55%;
+    background-color: #ffc266;
+    border-bottom-right-radius: 240px;
+}
+
+.bun2-shading {
+    position: relative;
+    top: -90%;
+    height: 100%;
+    width: 40%;
+    left: 60%;
+    background-color: #ffad33;
+}
+
+.bun2-unshading {
+    position: relative;
+    top: -190%;
+    height: 100%;
+    width: 40%;
+    left: 50%;
+    background-color: #ffc266;
+    border-bottom-right-radius: 240px;
+}
+
+.patty-shading {
+    position: relative;
+    top: -90%;
+    height: 100%;
+    width: 40%;
+    left: 60%;
+    background-color: #4d2600;
+}
+
+.patty-unshading {
+    position: relative;
+    top: -190%;
+    height: 100%;
+    width: 40%;
+    left: 55%;
+    background-color: #804000;
+    border-bottom-right-radius: 240px;
+}
+
+.description {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 80%;
+    color: white;
+}
+
+.cheese {
+    position: relative;
+    top: 2%;
+    left: 10%;
+    width: 80%;
+    height: 3%;
+    background-color: #ffcc00;  
+    border-radius: 20px;
+    overflow: hidden; 
+}
+
+.cheese-shading {
+    position: relative;
+    width: 40%;
+    left: 60%;
+    height: 100%;
+    background-color:#cca300
+}
+
+.cheese-unshading {
+    position: relative;
+    top: -100%;
+    width: 40%;
+    left: 50%;
+    height: 100%;
+    background-color:#ffcc00;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 400px;
+}
+
+.map-link {
+    position: absolute;
+    top: 87%;
+}
+
+.chart-link {
+    position: absolute;
+    top: 87%;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ffcc00
+}
+
+.credits {
+    position: absolute;
+    top: 30%;
+    width: 80%;
+    left: 10%;
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+  
+#chart {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+    width: 80%;
+    border-radius: 80px;
+    overflow: hidden;
+
+}
+
+
+#map {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+    width: 80%;
+    border-radius: 80px;
+}
+  
+.popup {
+    text-align: center
+}
+
+.info {
+    background:#ffffff;
+    width: 25%;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+    width: 25%;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+.repo-link {
+    position: absolute;
+    top: 50%;
+    left: 46%;
+    text-decoration: none;
+}
+
+.repo-link:hover {
+    color: #4d2600
+}
